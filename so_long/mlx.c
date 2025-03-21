@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maavalya <maavalya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maavalya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:14:28 by maavalya          #+#    #+#             */
-/*   Updated: 2024/05/07 16:06:33 by maavalya         ###   ########.fr       */
+/*   Updated: 2025/03/21 06:01:13 by maavalya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,26 @@ void	shorten2(t_key_data *data)
 
 int	key_hook(int keycode, t_key_data *data)
 {
+	printf("%d\n", keycode);
 	if (keycode == 53)
 	{
 		destroy(data);
 		freeing(data->map, data->dim);
 		exit(0);
 	}
-	if (keycode == 0 || keycode == 123)
+	if (keycode == 0 || keycode == 123 || keycode == 97)
 	{
 		data->dim = moving(data->map, data->dim, 'a', &(data->count));
 		data->temp = data->player_an;
 	}
-	else if (keycode == 13 || keycode == 126)
+	else if (keycode == 13 || keycode == 126 || keycode == 119)
 		data->dim = moving(data->map, data->dim, 'w', &(data->count));
-	else if (keycode == 2 || keycode == 124)
+	else if (keycode == 2 || keycode == 124 || keycode == 100)
 	{
 		data->dim = moving(data->map, data->dim, 'd', &(data->count));
 		data->temp = data->player;
 	}
-	else if (keycode == 1 || keycode == 125)
+	else if (keycode == 1 || keycode == 125 || keycode == 115)
 		data->dim = moving(data->map, data->dim, 's', &(data->count));
 	shorten2(data);
 	return (0);

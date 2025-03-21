@@ -19,7 +19,7 @@ static int	check_min(long long num, long long size)
 
 static int	check_neg(long long num, long long size)
 {
-	return ((size < 0 & num != 0) || (num < 0 && size != 0));
+	return (((size < 0) & (num != 0)) || ((num < 0) && (size != 0)));
 }
 
 void	*ft_calloc(size_t num, size_t size)

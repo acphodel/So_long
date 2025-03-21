@@ -66,13 +66,11 @@ int	filling(t_dimens map_dim, char **map)
 void	cut_map(char **map)
 {
 	int		i;
-	int		j;
 	char	*temp;
 
 	i = 0;
 	while (map[i])
 	{
-		j = 0;
 		temp = map[i];
 		map[i] = trim_back(map[i], "\n\t\v\f\r ");
 		free(temp);

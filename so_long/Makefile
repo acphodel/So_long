@@ -17,7 +17,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
-LDFLAGS = -lmlx -framework OpenGL -framework AppKit
+LDFLAGS = -Lminilibx-linux -lmlx -lX11 -lXext -lm
 FLAGS = -Wall -Wextra -Werror -Ift_printf -Lft_printf -lftprintf #-g3 -fsanitize=address
 GLAGS = -Wall -Wextra -Werror -Ilibft -Llibft -lft -g
 
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 		make -s -C ft_printf
 		make -s -C libft
-		$(CC) $(CFLAGS) $(FLAGS) $(GLAGS) $(LDFLAGS) $(OBJS) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) -Llibft -lft -Lft_printf -lftprintf $(LDFLAGS) -o $(NAME)
 
 %.o: %.c so_long.h Makefile
 	$(CC) $(CFLAGS) -c $< -o $@

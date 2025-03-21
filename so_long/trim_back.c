@@ -30,11 +30,7 @@ char	*trim_back(char const *s1, char const *set)
 {
 	char	*res;
 	size_t	len;
-	int		flag;
-	int		i;
 
-	flag = 0;
-	i = 0;
 	if (!s1 || !set)
 		return (NULL);
 	len = ft_strlen((char *)s1);
